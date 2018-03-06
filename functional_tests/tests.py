@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
 import time
-import unittest
 
 MAX_WAIT = 10
 
@@ -42,7 +41,7 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertEqual(inputbox.get_attribute('placeholder'), 'Enter a to-do item')
 
         # She types "Buy peacock feathers" into a text box(Edith's hobby is typing fly-fishing lures)
-#        inputbox.send_keys('Use peacock peacock feathers to make a fly')
+        # inputbox.send_keys('Use peacock peacock feathers to make a fly')
         inputbox.send_keys('Buy peacock feathers')
 
         # When she hits enter, the page updates, and now the page lists
@@ -77,8 +76,8 @@ class NewVisitorTest(LiveServerTestCase):
 
         # Now a new user, Francis, comes along to the site
 
-        ## We use a new browser session to make sure that no information
-        ## of Edith's is coming through from cookies etd
+        # We use a new browser session to make sure that no information
+        # of Edith's is coming through from cookies etd
         self.browser.quit()
         self.browser = webdriver.Firefox()
 
